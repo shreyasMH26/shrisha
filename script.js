@@ -16,8 +16,32 @@ const yesMessages = [
 
 let index = 0;
 
+// yesBtn.addEventListener("click", () => {
+//     msg.style.opacity = 0;
+//     heart.style.transform = "scale(1.4)";
+//     heading.style.transform = "scale(1.05)";
+//     heading.style.textShadow = "0 0 25px #ffb3ec, 0 0 45px #c3a6ff, 0 0 60px #a5d8ff";
+
+//     setTimeout(() => {
+//         msg.innerHTML = yesMessages[index];
+//         msg.style.opacity = 1;
+//         index = (index + 1) % yesMessages.length;
+//         sparkleBurst();
+//         heart.style.transform = "scale(1.2)";
+//         heading.style.transform = "scale(1)";
+//         heading.style.textShadow = "0 0 8px #ffb3ec, 0 0 16px #c3a6ff, 0 0 24px #a5d8ff";
+//     }, 300);
+// });
+const bgMusic = document.getElementById("bgMusic");
+
 yesBtn.addEventListener("click", () => {
     msg.style.opacity = 0;
+
+    // Play background music
+    if (bgMusic.paused) {
+        bgMusic.play();
+    }
+
     heart.style.transform = "scale(1.4)";
     heading.style.transform = "scale(1.05)";
     heading.style.textShadow = "0 0 25px #ffb3ec, 0 0 45px #c3a6ff, 0 0 60px #a5d8ff";
@@ -32,6 +56,7 @@ yesBtn.addEventListener("click", () => {
         heading.style.textShadow = "0 0 8px #ffb3ec, 0 0 16px #c3a6ff, 0 0 24px #a5d8ff";
     }, 300);
 });
+
 
 noBtn.addEventListener("click", () => {
     msg.innerHTML = "Liar 😏 try again!";
