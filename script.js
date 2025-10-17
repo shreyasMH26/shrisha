@@ -5,10 +5,11 @@ const heart = document.querySelector(".heart");
 const heading = document.querySelector(".main-char");
 
 const yesMessages = [
-    "Yes — your vlogs might be ‘cringy,’ but they’re my favorite kind of chaos 😏📸",
+    "Yes — camera on or off, you’re always the main character 💃🎬",
     "Yes — *You're my Tumblr girl in a world so fake’* — realest one I know 💖",
     "Yes — even Seedhe Maut would say your energy’s ‘seedha lit’ 🔥🎤",
-    "Yes — camera on or off, you’re always the main character 💃🎬",
+    "Yes — your vlogs might be ‘cringy,’ but they’re my favorite kind of chaos 😏📸",
+     "camera on or off, you’re always the main character 💃🎬",
     "Yes — you turn cringe into charm and it’s kinda dangerous 😳✨",
     "Yes — *‘She’s my Tumblr girl, I’m her G-Eazy vibe’* — you get it 😉💫",
     "Yes — even your bloopers deserve a fan club 💕📹"
