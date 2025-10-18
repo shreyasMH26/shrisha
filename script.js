@@ -61,7 +61,7 @@ function sparkleBurst() {
 }
 
 function spawnPokemon() {
-  const imgs = ["infernape.png", "lucario.png", "greninja.png", "latias.png", "latios.png"];
+  const imgs = ["infernape.png", "lucario.png", "greninja.png", "latias.png"];
   const img = document.createElement("img");
   img.src = imgs[Math.floor(Math.random() * imgs.length)];
   img.classList.add("floating-pokemon");
