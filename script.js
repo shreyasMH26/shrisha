@@ -61,14 +61,24 @@ function sparkleBurst() {
 }
 
 function spawnPokemon() {
-  const imgs = ["infernape.png", "lucario.png", "greninja.png", "latias.png"];
-  const img = document.createElement("img");
-  img.src = imgs[Math.floor(Math.random() * imgs.length)];
-  img.classList.add("floating-pokemon");
-  img.style.left = Math.random() * 100 + "%";
-  img.style.top = "100%";
-  document.body.appendChild(img);
-  setTimeout(() => img.remove(), 6000);
+  const imgs = ["images/pngwing.com (1).png", "images/pngwing.com (2).png", "images/pngwing.com (3).png", "images/pngwing.com (4).png", "images/pngwing.com (5).png", "images/pngwing.com.png"];
+  // const img = document.createElement("img");
+  // img.src = imgs[Math.floor(Math.random() * imgs.length)];
+  // img.classList.add("floating-pokemon");
+  // img.style.left = Math.random() * 100 + "%";
+  // img.style.top = "100%";
+  // document.body.appendChild(img);
+  // setTimeout(() => img.remove(), 6000);
+  const preloadimages = [];
+  function preloadimages() 
+   {
+    for (const path of imgs){
+      const img = new Image();
+      img.src = path;
+      preloadimages.push(img);
+    }
+}
+preloadimages();
 }
 
 function summonPokemonWave() {
