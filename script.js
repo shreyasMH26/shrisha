@@ -60,27 +60,47 @@ function sparkleBurst() {
   }
 }
 
-function spawnPokemon() {
-  const imgs = ["images/pngwing.com (1).png", "images/pngwing.com (2).png", "images/pngwing.com (3).png", "images/pngwing.com (4).png", "images/pngwing.com (5).png", "images/pngwing.com.png"];
-  // const img = document.createElement("img");
-  // img.src = imgs[Math.floor(Math.random() * imgs.length)];
-  // img.classList.add("floating-pokemon");
-  // img.style.left = Math.random() * 100 + "%";
-  // img.style.top = "100%";
-  // document.body.appendChild(img);
-  // setTimeout(() => img.remove(), 6000);
-  const preloadimages = [];
-  function preloadimages() 
-   {
-    for (const path of imgs){
-      const img = new Image();
-      img.src = path;
-      preloadimages.push(img);
-    }
+const imgs = [
+  "images/pngwing.com (1).png",
+  "images/pngwing.com (2).png",
+  "images/pngwing.com (3).png",
+  "images/pngwing.com (4).png",
+  "images/pngwing.com (5).png",
+  "images/pngwing.com.png"
+];
+
+const preloadedImages = [];
+
+function preloadImages() {
+  for (const path of imgs) {
+    const img = new Image();
+    img.src = path;
+    preloadedImages.push(img);
+  }
 }
-preloadimages();
+
+// Call this once at the start
+preloadImages();
+
+function spawnPokemon() {
+  const imgTemplate = preloadedImages[Math.floor(Math.random() * preloadedImages.length)];
+  const img = imgTemplate.cloneNode(); // Clone so we don't reuse the same element
+
+  img.classList.add("floating-pokemon");
+  img.style.position = "absolute";
+  img.style.left = Math.random() * 100 + "%";
+  img.style.top = "100%";
+
+  document.body.appendChild(img);
+
+  // Optional: animate upward using CSS or JS
+  // Example: floating effect with CSS class or JS animation
+
+  setTimeout(() => img.remove(), 6000);
 }
 
 function summonPokemonWave() {
-  for (let i = 0; i < 5; i++) setTimeout(spawnPokemon, i * 500);
+  for (let i = 0; i < 5; i++) {
+    setTimeout(spawnPokemon, i * 500);
+  }
 }
